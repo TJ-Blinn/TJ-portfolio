@@ -13,3 +13,69 @@
   position: fixed;
   z-index: 2;
 }
+
+.app__navbar-logo {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  // SCSS nesting properties of img
+  img {
+    width: 90px;
+    height: 20px
+  }
+  // X-large screens
+  @media screen and (min-width: 2000px) {
+    width: 180px;
+    height: 40px
+  }
+}
+
+.app__navbar-links {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  list-style: none;
+}
+
+li {
+  margin: 0 1rem;
+  cursor: pointer;
+
+  flex-direction: column;
+
+  // dot hover effect styling over links
+  div {
+    width: 5px;
+    height: 5px;
+    background: transparent;
+    border-radius: 50%;
+
+    margin-bottom: 5px;;
+  }
+
+  a {
+    color: var(--gray-color);
+    text-decoration: none;
+    flex-direction: column;
+
+    text-transform: uppercase;
+    font-weight: 500;
+
+    // visible with hover effect
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      color: var(--secondary-color);
+    }
+  }
+
+  // dot hover effect for <li>
+  &:hover {
+    div {
+      background-color: var(--secondary-color);
+    }
+  }
+}
