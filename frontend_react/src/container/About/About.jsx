@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
+import { images } from "../../constants";
+
 import "./About.scss";
 
 const Abouts = [
-  { title: "Front-end Web Developer", description: "Designing responsive and dynamic apps from wireframe to production!", imgUrl: "" },
-  { title: "Back-end Web Developer", description: "Database design with NodeJs, SQL, PostgreSQL and, Sanity", imgUrl: "" },
-  { title: "Web Design", description: "Making functional code fun!", imgUrl: "" },
-  { title: "Web Animations", description: "Making designs come to life!", imgUrl: "" },
+  { title: "Front-end Web Developer", description: "Designing responsive and dynamic apps from wireframe to production!", imgUrl: images.about01 },
+  { title: "Back-end Web Developer", description: "Database design with NodeJs, SQL, PostgreSQL and, Sanity", imgUrl: images.about02 },
+  { title: "Web Design", description: "Making functional code fun!", imgUrl: images.about03 },
+  { title: "Web Animations", description: "Making designs come to life!", imgUrl: images.about04 },
 ];
 
 const About = () => {
