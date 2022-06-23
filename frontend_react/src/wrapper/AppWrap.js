@@ -1,5 +1,5 @@
 import React from "react";
-import { NavigationDots, SocialMedia } from "../../components";
+import { NavigationDots, SocialMedia } from "../components";
 
 // Section Wrapper function
 
