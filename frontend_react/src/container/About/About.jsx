@@ -40,6 +40,7 @@ const About = () => {
             className="app__profile-item"
             key={about.title + index}
           >
+            {/* Link to sanity function for image fetching */}
             <img src={urlFor(about.imgUrl)} alt={about.title} />
             <h2 className="bold-text" style={{ marginTop: 20 }}>
               {about.title}
