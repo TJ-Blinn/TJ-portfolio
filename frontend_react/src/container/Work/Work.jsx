@@ -75,6 +75,7 @@ const Work = () => {
                 {work.description}
               </p>
 
+              {/* Select 1st tag in list */}
               <div className="app__work-tag app__flex">
                 <p className="p-text">{work.tags[0]}</p>
               </div>
