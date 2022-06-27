@@ -24,8 +24,23 @@ const Work = () => {
     });
   }, []);
 
-  // 'pill' styled buttons above the boxes for each portfolio example | categorize the apps
-  const handleWorkFilter = (item) => {};
+  // 'pill' styled buttons above the boxes to filter by each portfolio example | categorize the apps
+  const handleWorkFilter = (item) => {
+    // re-trigger the shuffle animation of the cards when we change the category
+    setActiveFilter(item);
+    setAnimateCard([{ y: 100, opacity: 0 }]);
+
+    setTimeout(() => {
+      setAnimateCard([{ y: 0, opacity: 1 }]);
+
+      if (item === "All") {
+        setFilterWork(works);
+      } else {
+        setFilterWork(works.filter((work) => work.tags.includes(item)));
+      }
+    }, 500);
+  };
+
   return (
     <>
       <h2 className="head-text">
