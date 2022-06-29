@@ -67,7 +67,7 @@ const Skills = () => {
                       <p className="p-text">{work.company}</p>
                     </motion.div>
 
-                    <ReactTooltip id={work.name} effect="solid" arrowColor="#fff" className="skills-tooltip">
+                    <ReactTooltip id={work.name} place="bottom" effect="solid" arrowColor="#fff" className="skills-tooltip">
                       {work.desc}
                     </ReactTooltip>
                   </>
@@ -81,4 +81,4 @@ const Skills = () => {
   );
 };
 
-export default Skills;
+export default AppWrap(Skills, "skills");
