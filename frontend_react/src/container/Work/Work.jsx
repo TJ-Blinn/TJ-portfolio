@@ -49,7 +49,7 @@ const Work = () => {
 
       <div className="app__work-filter">
         {/* loop over categories */}
-        {["React Js", "Node Js", "jQuery", "Ruby", "All"].map((item, index) => (
+        {["React", "Node Js", "jQuery", "Ruby", "All"].map((item, index) => (
           <div
             key={index}
             onClick={() => handleWorkFilter(item)}
