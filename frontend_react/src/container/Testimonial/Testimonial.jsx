@@ -11,7 +11,6 @@ import "./Testimonial.scss";
 const Testimonial = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [testimonials, setTestimonials] = useState([]);
-  const [brands, setBrands] = useState([]);
 
   const handleClick = (index) => {
     setCurrentIndex(index);
@@ -20,14 +19,10 @@ const Testimonial = () => {
   // fetching from Sanity
   useEffect(() => {
     const query = '*[_type == "testimonials"]';
-    const brandsQuery = '*[_type == "brands"]';
 
     // objects inside the array represent years | each year can have multiple experiences
     client.fetch(query).then((data) => {
       setTestimonials(data);
-    });
-    client.fetch(brandsQuery).then((data) => {
-      setBrands(data);
     });
   }, []);
 
