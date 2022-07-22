@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { AppWrap, MotionWrap } from "../../wrapper";
 import { urlFor, client } from "../../client";
-import { Resume } from "../../components";
+import { Resume, SmallTitle } from "../../components";
+import { BsFillBriefcaseFill } from "react-icons/bs";
 
 // import ReactTooltip from "react-tooltip";
 
@@ -47,8 +48,9 @@ const Skills = () => {
 
         {/* loop over all the experiences */}
         <motion.div className="app__skills-exp">
-          {/* {console.log("----- skills-exp:", experience.works)} */}
+          {/* Resume and SmallTitle component for heading of section */}
           <Resume title={"Resume"} span={"Resume"} />
+          <SmallTitle icon={<BsFillBriefcaseFill />} title={"Work Experience"} />
 
           {experiences.map((experience, index) => (
             <motion.div className="app__skills-exp-item" item={experience.year} key={index}>
