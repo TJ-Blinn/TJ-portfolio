@@ -141,6 +141,24 @@
   }
 }
 
+.app__resume-button {
+  color: #030303;
+  padding: 10px 30px;
+  font-size: 1em;
+  font-weight: 500;
+  background: #edf2f8;
+  border-radius: 50px;
+  // border: 1px solid black;
+  margin: 40px auto 0;
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+// CV link button
+a {
+  text-decoration: none;
+}
+
 // Use overwrite option for custom style of tool-tip
 // .skills-tooltip {
 //   max-width: 300px !important;

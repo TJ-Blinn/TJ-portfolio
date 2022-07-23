@@ -78,6 +78,20 @@ const Skills = () => {
             </motion.div>
           ))}
         </motion.div>
+
+        {/* Button link to CV */}
+        <a href="https://resume.creddle.io/resume/4vq8ksqldw">
+          <motion.button
+            className="app__resume-button app__flex"
+            whileHover={{
+              scale: 1.2,
+              // textShadow: "0px 0px 8px #030303",
+              boxShadow: "0px 0px 5px #030303",
+            }}
+          >
+            Click for full CV
+          </motion.button>
+        </a>
       </div>
     </>
   );
