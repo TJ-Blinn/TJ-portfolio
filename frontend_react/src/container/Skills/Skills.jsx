@@ -2,10 +2,8 @@ import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { AppWrap, MotionWrap } from "../../wrapper";
 import { urlFor, client } from "../../client";
-import { Resume, ResumeItem, SmallTitle } from "../../components";
-import { BsFillBriefcaseFill } from "react-icons/bs";
-
-// import ReactTooltip from "react-tooltip";
+import { ResumeItem } from "../../components";
+// import { BsFillBriefcaseFill } from "react-icons/bs";
 
 import "./Skills.scss";
 
@@ -48,10 +46,6 @@ const Skills = () => {
 
         {/* loop over all the experiences */}
         <motion.div className="app__skills-exp">
-          {/* Resume and SmallTitle component for heading of section */}
-          {/* <Resume icon={<BsFillBriefcaseFill />} title={"Work Experience"} span={"Work Experience"} /> */}
-          {/* <SmallTitle icon={<BsFillBriefcaseFill />} title={"Work Experience"} /> */}
-
           {experiences.map((experience, index) => (
             <motion.div className="app__skills-exp-item" item={experience.year} key={index}>
               <ResumeItem year={experience.year} />
@@ -73,8 +67,6 @@ const Skills = () => {
                       key={index}
                     >
                       <ResumeItem placeName={work.name} subTitle={work.company} text={work.desc} />
-                      {/* <h4 className="bold-text">{work.name}</h4>
-                      <p className="p-text">{work.company}</p> */}
                     </motion.div>
 
                     {/* <ReactTooltip id={work.name} place="bottom" effect="solid" arrowColor="#fff" className="skills-tooltip">
