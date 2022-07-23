@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { AppWrap, MotionWrap } from "../../wrapper";
 import { urlFor, client } from "../../client";
-import { Resume, SmallTitle } from "../../components";
+import { Resume, ResumeItem, SmallTitle } from "../../components";
 import { BsFillBriefcaseFill } from "react-icons/bs";
 
 // import ReactTooltip from "react-tooltip";
@@ -30,7 +30,7 @@ const Skills = () => {
 
   return (
     <>
-      <h2 className="head-text">Skills & Experience</h2>
+      <h2 className="head-text">Skills & Experience Snapshot</h2>
 
       <div className="app__skills-container">
         <motion.div className="app__skills-list">
@@ -49,14 +49,16 @@ const Skills = () => {
         {/* loop over all the experiences */}
         <motion.div className="app__skills-exp">
           {/* Resume and SmallTitle component for heading of section */}
-          <Resume title={"Resume"} span={"Resume"} />
-          <SmallTitle icon={<BsFillBriefcaseFill />} title={"Work Experience"} />
+          {/* <Resume icon={<BsFillBriefcaseFill />} title={"Work Experience"} span={"Work Experience"} /> */}
+          {/* <SmallTitle icon={<BsFillBriefcaseFill />} title={"Work Experience"} /> */}
 
           {experiences.map((experience, index) => (
             <motion.div className="app__skills-exp-item" item={experience.year} key={index}>
-              <div className="app__skills-exp-year">
+              <ResumeItem year={experience.year} />
+              {/* <div className="app__skills-exp-year">
                 <p className="bold-text">{experience.year}</p>
-              </div>
+              </div> */}
+
               <motion.div className="app__skills-exp-works">
                 {/* 1st loops of year, then loop over the experiences contained within */}
                 {experience.works.map((work, index) => (
@@ -70,8 +72,9 @@ const Skills = () => {
                       item={work.name}
                       key={index}
                     >
-                      <h4 className="bold-text">{work.name}</h4>
-                      <p className="p-text">{work.company}</p>
+                      <ResumeItem placeName={work.name} subTitle={work.company} text={work.desc} />
+                      {/* <h4 className="bold-text">{work.name}</h4>
+                      <p className="p-text">{work.company}</p> */}
                     </motion.div>
 
                     {/* <ReactTooltip id={work.name} place="bottom" effect="solid" arrowColor="#fff" className="skills-tooltip">
