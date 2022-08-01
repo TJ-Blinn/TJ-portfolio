@@ -69,8 +69,9 @@
 
   // text under each tag icon
   p {
-    font-weight: 500;
+    font-weight: 700;
     margin-top: 0.5rem;
+    color: var(--black-color);
   }
 
   @media screen and(min-width: 2000px) {
@@ -85,7 +86,7 @@
 // Description of Work Experience (CV) below the Skills icons
 .app__skills-exp {
   flex: 1;
-  display: flex;
+  // display: flex;
   justify-content: flex-start;
   align-items: flex-start;
   flex-direction: column;
@@ -142,16 +143,46 @@
 }
 
 .app__resume-button {
-  color: #030303;
-  padding: 10px 30px;
-  font-size: 1em;
+  width: 60%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap-reverse;
+  margin: 4rem 2rem 2rem;
+
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  border: none;
+  background-color: var(--secondary-color);
+
   font-weight: 500;
-  background: #edf2f8;
-  border-radius: 50px;
-  // border: 1px solid black;
-  margin: 40px auto 0;
+  color: var(--white-color);
+  outline: none;
+  margin: 2rem 0 0 0;
+  font-family: var(--font-base);
   cursor: pointer;
-  opacity: 0.7;
+
+  @media screen and (max-width: 768px) {
+    width: 100%;
+    margin: 1rem 0;
+  }
+  // color: #030303;
+  // padding: 10px 30px;
+  // font-size: 1em;
+  // font-weight: 500;
+  // background: #edf2f8;
+  // border-radius: 50px;
+  // // border: 1px solid black;
+  // margin: 40px auto 0;
+  // cursor: pointer;
+  // opacity: 0.7;
+
+  // &:hover {
+  //   background-color: var(--secondary-color);
+  //   border-color: var(--secondary-color);
+  //   color: var(--white-color);
+  //   opacity: revert;
+  // }
 }
 
 // CV link button
