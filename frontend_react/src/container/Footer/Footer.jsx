@@ -67,7 +67,6 @@ const Footer = () => {
           </div>
           <button type="button" className="p-text" onClick={handleSubmit}>
             {loading ? "Sending" : "Send Message"}
-            Send Message
           </button>
         </div>
       ) : (
