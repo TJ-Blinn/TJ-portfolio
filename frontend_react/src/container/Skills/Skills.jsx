@@ -79,7 +79,7 @@ const Skills = () => {
           ))}
 
           {/* Button link to CV */}
-          <div>
+          <div className="app__resume-button-container">
             {/* <a href="https://resume.creddle.io/resume/4vq8ksqldw"> */}
             <motion.button
               className="app__resume-button app__flex"
