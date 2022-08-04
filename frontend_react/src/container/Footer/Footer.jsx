@@ -7,7 +7,6 @@ import "./Footer.scss";
 
 // Footer here is also the Contact Form
 const Footer = () => {
-
   const [formData, setformData] = useState({ name: "", email: "", message: "" });
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -39,8 +38,6 @@ const Footer = () => {
     });
   };
 
-
-
   return (
     <>
       <h2 className="head-text">Grab a coffee and chat with me</h2>
@@ -53,7 +50,6 @@ const Footer = () => {
           </a>
         </div>
       </div>
-
 
       {/* Contact form with ternary to display success msg */}
       {!isFormSubmitted ? (
@@ -79,7 +75,7 @@ const Footer = () => {
         </div>
       )}
 
-      <div className="app__footer-form app__flex">
+      {/* <div className="app__footer-form app__flex">
         <div className="app__flex">
           <input className="p-text" type="text" placeholder="Your Name" name={name} value={name} onChange={handleChangeInput} />
         </div>
@@ -94,8 +90,7 @@ const Footer = () => {
         <button type="button" className="p-text" onClick={handleSubmit}>
           Send Message
         </button>
-      </div>
-
+      </div> */}
     </>
   );
 };
