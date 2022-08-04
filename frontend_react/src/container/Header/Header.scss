@@ -58,10 +58,11 @@
   justify-content: flex-end;
   align-items: flex-end;
   flex-direction: column;
+  margin-top: 1.5rem;
 
   .badge-cmp,
   .tag-cmp {
-    padding: 1rem 2rem;
+    padding: 1rem 1rem;
     border: var(--white-color);
     border-radius: 15px;
     flex-direction: row;
@@ -72,7 +73,7 @@
 
   .tag-cmp {
     flex-direction: column;
-    margin-top: 3rem;
+    margin-top: 2rem;
 
     p {
       width: 100%;
@@ -201,12 +202,12 @@
   height: 100%;
 
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: flex-end;
   position: relative;
 
   img {
-    width: 100%;
+    width: 80%;
     object-fit: contain;
     z-index: 1;
   }

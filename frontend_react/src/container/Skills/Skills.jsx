@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import ReactTooltip from "react-tooltip";
 import { AppWrap, MotionWrap } from "../../wrapper";
 import { urlFor, client } from "../../client";
+import { ResumeItem } from "../../components";
+// import { BsFillBriefcaseFill } from "react-icons/bs";
 
 import "./Skills.scss";
 
@@ -27,13 +28,13 @@ const Skills = () => {
 
   return (
     <>
-      <h2 className="head-text">Skills & Experience</h2>
+      <h2 className="head-text">Skills & Experience Snapshot</h2>
 
       <div className="app__skills-container">
         <motion.div className="app__skills-list">
           {/* fetch Skills from Sanity CMS and map over them*/}
-          {skills?.map((skill) => (
-            <motion.div whileInView={{ opacity: [0, 1] }} transition={{ duration: 0.5 }} className="app__skills-item app__flex" key={skill.name}>
+          {skills?.map((skill, index) => (
+            <motion.div whileInView={{ opacity: [0, 1] }} transition={{ duration: 0.5 }} className="app__skills-item app__flex" item={skill.name} key={index}>
               <div className="app__flex" style={{ backgroundColor: skill.bgColor }}>
                 <img src={urlFor(skill.icon)} alt={skill.name} />
               </div>
@@ -45,15 +46,16 @@ const Skills = () => {
 
         {/* loop over all the experiences */}
         <motion.div className="app__skills-exp">
-          {/* {console.log("----- skills-exp:", experience.works)} */}
-          {experiences.map((experience) => (
-            <motion.div className="app__skills-exp-item" key={experience.year}>
-              <div className="app__skills-exp-year">
+          {experiences.map((experience, index) => (
+            <motion.div className="app__skills-exp-item" item={experience.year} key={index}>
+              <ResumeItem year={experience.year} />
+              {/* <div className="app__skills-exp-year">
                 <p className="bold-text">{experience.year}</p>
-              </div>
+              </div> */}
+
               <motion.div className="app__skills-exp-works">
                 {/* 1st loops of year, then loop over the experiences contained within */}
-                {experience.works.map((work) => (
+                {experience.works.map((work, index) => (
                   <>
                     <motion.div
                       whileInView={{ opacity: [0, 1] }}
@@ -61,20 +63,37 @@ const Skills = () => {
                       className="app__skills-exp-work"
                       data-tip
                       data-for={work.name}
-                      key={work.name}
+                      item={work.name}
+                      key={index}
                     >
-                      <h4 className="bold-text">{work.name}</h4>
-                      <p className="p-text">{work.company}</p>
+                      <ResumeItem placeName={work.name} subTitle={work.company} text={work.desc} />
                     </motion.div>
 
-                    <ReactTooltip id={work.name} place="bottom" effect="solid" arrowColor="#fff" className="skills-tooltip">
+                    {/* <ReactTooltip id={work.name} place="bottom" effect="solid" arrowColor="#fff" className="skills-tooltip">
                       {work.desc}
-                    </ReactTooltip>
+                    </ReactTooltip> */}
                   </>
                 ))}
               </motion.div>
             </motion.div>
           ))}
+
+          {/* Button link to CV */}
+          <div className="app__resume-button-container">
+            {/* <a href="https://resume.creddle.io/resume/4vq8ksqldw"> */}
+            <motion.button
+              className="app__resume-button app__flex"
+              whileHover={{
+                scale: 1.2,
+                // textShadow: "0px 0px 8px #030303",
+                boxShadow: "0px 0px 3px #030303",
+              }}
+            >
+              <a href="https://resume.creddle.io/resume/4vq8ksqldw" alt="Click for full CV"></a>
+              Click for full CV
+            </motion.button>
+            {/* </a> */}
+          </div>
         </motion.div>
       </div>
     </>
