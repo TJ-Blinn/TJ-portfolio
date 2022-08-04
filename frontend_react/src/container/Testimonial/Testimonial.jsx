@@ -9,6 +9,7 @@ import { urlFor, client } from "../../client";
 import "./Testimonial.scss";
 
 const Testimonial = () => {
+
   const [currentIndex, setCurrentIndex] = useState(0);
   const [testimonials, setTestimonials] = useState([]);
 
@@ -16,14 +17,17 @@ const Testimonial = () => {
     setCurrentIndex(index);
   };
 
+
   // fetching from Sanity
   useEffect(() => {
     const query = '*[_type == "testimonials"]';
+
 
     // objects inside the array represent years | each year can have multiple experiences
     client.fetch(query).then((data) => {
       setTestimonials(data);
     });
+
   }, []);
 
   // return <div>Testimonial</div>;
@@ -59,6 +63,7 @@ const Testimonial = () => {
       )}
     </>
   );
+
 };
 // };
 
