@@ -89,8 +89,9 @@ const Skills = () => {
                 boxShadow: "0px 0px 3px #030303",
               }}
             >
-              <a href="https://resume.creddle.io/resume/4vq8ksqldw" alt="Click for full CV"></a>
-              Click for full CV
+              <a href="https://resume.creddle.io/resume/4vq8ksqldw" alt="Click for full CV">
+                Click for full CV
+              </a>
             </motion.button>
             {/* </a> */}
           </div>
